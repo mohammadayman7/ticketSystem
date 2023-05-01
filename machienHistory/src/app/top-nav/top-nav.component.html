@@ -1,0 +1,51 @@
+<!--<nav class="top-nav">-->
+<!--  <div class="menu-icon" (click)="toggleMenu()">-->
+<!--    <i class="fas fa-bars"></i>-->
+<!--  </div>-->
+<!--  <div class="user-icon" (click)="toggleUserMenu()">-->
+<!--    <i class="fas fa-user"></i>-->
+<!--  </div>-->
+<!--  <div class="menu-options" [ngClass]="{ active: menuOpen }">-->
+<!--    <a href="#">Option 1</a>-->
+<!--    <a href="#">Option 2</a>-->
+<!--    <a href="#">Option 3</a>-->
+<!--    <a href="#">Sign Out</a>-->
+<!--  </div>-->
+<!--  <div class="user-options" [ngClass]="{ active: userMenuOpen }">-->
+<!--    <a href="#">Profile</a>-->
+<!--    <a href="#">Settings</a>-->
+<!--    <a href="#">Sign Out</a>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!--<nav class="top-nav">-->
+<!--  <div class="menu-icon" >-->
+<!--    <i class="fas fa-bars"></i>-->
+<!--  </div>-->
+<!--  <div class="user-icon" (click)="toggleUserMenu()">-->
+<!--    <i class="fas fa-user-circle"></i>-->
+<!--    <div class="user-options" [ngClass]="{ active: userMenuOpen }">-->
+<!--      <a href="#">Profile</a>-->
+<!--      <a href="#">Settings</a>-->
+<!--      <a href="#">Sign Out</a>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</nav>-->
+<nav class="top-nav">
+
+  <span class="user-name">{{ getUsername() }}</span>
+  <div class="user-icon" (click)="toggleUserMenu()">
+
+    <i class="fas fa-user-circle"></i>
+    <div class="user-options" [ngClass]="{ active: userMenuOpen }">
+      <a href="#" >Profile</a>
+      <a href="#">Settings</a>
+      <a href="#">Sign Out</a>
+    </div>
+  </div>
+
+</nav>
+
+
+

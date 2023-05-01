@@ -1,0 +1,53 @@
+<!--<table class="table">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Name</th>-->
+<!--    <th>Type</th>-->
+<!--    <th>Status</th>-->
+<!--    <th></th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let project of projects">-->
+<!--    <td>{{ project.id }}</td>-->
+<!--    <td>{{ project.name }}</td>-->
+<!--    <td>{{ project.type }}</td>-->
+<!--    <td>-->
+<!--      {{ project.status === 'Active' ? 'Active' : 'Disabled' }}-->
+<!--      <span class="dot" [ngClass]="{'green': project.status === 'Active', 'red': project.status === 'Disabled'}"></span>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <button class="btn btn-primary" (click)="showProject(project.id)">Show</button>-->
+<!--    <td *ngIf="isAdmin"><button class="btn btn-secondary" (click)="editProject(project.id)">Edit</button></td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<table class="table custom-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let project of projects | paginate: { itemsPerPage: 10, currentPage: currentPage }" class="custom-table-row" [ngClass]="{ 'beige-row': currentPage % 2 === 1 }">
+    <td>{{ project.id }}</td>
+    <td>{{ project.name }}</td>
+    <td>{{ project.type }}</td>
+    <td>
+      {{ project.status === 'Active' ? 'Active' : 'Disabled' }}
+      <span class="dot" [ngClass]="{'green': project.status === 'Active', 'red': project.status === 'Disabled'}"></span>
+    </td>
+    <td>
+      <button class="btn btn-primary" (click)="showProject(project.id)">Show</button>
+    <td *ngIf="isAdmin"><button class="btn btn-secondary" (click)="editProject(project.id)">Edit</button></td>
+
+  </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

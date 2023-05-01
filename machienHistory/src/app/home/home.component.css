@@ -1,0 +1,62 @@
+/*.navbar {*/
+/*  background-color: #F7C652;*/
+/*  border-radius: 0;*/
+
+/*}*/
+
+/*.navbar-brand {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  background-color: #F7C652;*/
+
+/*}*/
+
+/*.navbar-brand .fas {*/
+/*  font-size: 24px;*/
+/*  position: fixed;*/
+
+
+/*}*/
+
+/*.navbar-brand .ms-2 {*/
+/*  font-size: 1.5rem;*/
+/*  top: 0;*/
+/*  width: 100%;*/
+/*  z-index: 9999;*/
+/*}*/
+
+/*.left-nav {*/
+/*  background-color: #F7C652;*/
+/*  height: 100vh;*/
+/*  border-radius: 0;*/
+/*  width: 150px;*/
+
+/*}*/
+
+/*.left-nav .list-group-item {*/
+/*  background-color: #F7C652;*/
+/*  border: none;*/
+/*  padding: 10px;*/
+/*  margin-bottom: 1px;*/
+/*}*/
+
+/*.left-nav .list-group-item a {*/
+/*  color: #000000;*/
+/*  text-decoration: none;*/
+/*}*/
+/*.left-nav .list-group-item a:hover {*/
+/*  background-color: #343a40;*/
+/*  color: #fff;*/
+
+/*}*/
+
+/*.main-content {*/
+/*  padding: 20px;*/
+/*  height: 100vh;*/
+/*}*/
+
+
+
+
+
+
