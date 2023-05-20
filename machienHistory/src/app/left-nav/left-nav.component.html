@@ -1,18 +1,63 @@
-
-
 <nav class="left-nav">
   <button class="openbtn" (click)="menuOpen = true">☰ Menu <img src="../../assets/icons/favicon-32x32.png" alt="Your Icon"></button>
 
   <div id="mySidebar" class="sidebar " [ngClass]="{ 'active': menuOpen }">
     <button class="closebtn" (click)="menuOpen = false">☰ <img src="../../assets/icons/favicon-32x32.png" alt="Your Icon" style="margin-left: 55px"></button>
-    <h3 style="letter-spacing: 5px">S N I P E</h3>
-    <a routerLink="/home/project/1" (click)="menuOpen = false" class="nav-link text-white py-3">AgriLive-Monitoring</a>
-    <a routerLink="/home/project/2" (click)="menuOpen = false" class="nav-link text-white py-3">AgriLive-AGH</a>
-    <a href="#designers" (click)="menuOpen = false" class="nav-link text-white py-3">AgriWise</a>
-    <a href="#packages" (click)="menuOpen = false" class="nav-link text-white py-3">MCP</a>
-    <a href="#packages" (click)="menuOpen = false" class="nav-link text-white py-3">Prolock</a>
-    <a href="#contact" (click)="menuOpen = false" class="nav-link text-white py-3">Contact</a>
+    <h3><br>S N I P E</h3>
+    <a routerLink="project/1" class="nav-link text-white py-3">AgriLive-Monitoring</a>
+    <a (click)="menuOpen = false;move()"  class="nav-link text-white py-3" >AgriLive-AGH</a>
+    <a (click)="menuOpen = false;move()" class="nav-link text-white py-3">AgriWise</a>
+    <a (click)="menuOpen = false;move()" class="nav-link text-white py-3">MCP</a>
+    <a (click)="menuOpen = false;move()" class="nav-link text-white py-3">Prolock</a>
+    <a (click)="menuOpen = false" class="nav-link text-white py-3">Contact</a>
   </div>
 </nav>
 
+<!--<nav class="left-nav">-->
+<!--  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">-->
+<!--    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" (click)="openMenu()">☰</a>-->
+<!--    <span>Company Name</span>-->
+<!--  </header>-->
+<!--  &lt;!&ndash; Sidebar/menu &ndash;&gt;-->
+<!--  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>-->
+<!--    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>-->
+<!--    <div class="w3-container">-->
+<!--      <h3 class="w3-padding-64"><b> <img src="../../assets/icons/favicon-32x32.png"-->
+<!--                                         alt="Your Icon" width="30" height="30" class="d-inline-block align-text-top me-2"><br>Snipe Irrigation</b></h3>-->
+<!--    </div>-->
+<!--    <div class="w3-bar-block">-->
+<!--      <a routerLink="/home/project/1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriLive-Monitoring</a>-->
+<!--      <a routerLink="/home/project/2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriLive-AGH</a>-->
+<!--      <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriWise</a>-->
+<!--      <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">MCP</a>-->
+<!--      <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Prolock</a>-->
+<!--      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</nav>-->
 
+<!--&lt;!&ndash; Overlay effect when opening sidebar on small screens &ndash;&gt;-->
+<!--<div class="w3-overlay w3-hide-large" (click)="closeMenu()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>-->
+
+<!--<body>-->
+<!--<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">-->
+<!--  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>-->
+<!--  <span>Company Name</span>-->
+<!--</header>-->
+
+<!--&lt;!&ndash; Sidebar/menu &ndash;&gt;-->
+<!--<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>-->
+<!--  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>-->
+<!--  <div class="w3-container">-->
+<!--    <h3 class="w3-padding-64"><b> <img src="../../assets/icons/favicon-32x32.png"-->
+<!--                                       alt="Your Icon" width="30" height="30" class="d-inline-block align-text-top me-2"><br>Snipe Irrigation</b></h3>-->
+<!--  </div>-->
+<!--  <div class="w3-bar-block">-->
+<!--    <a routerLink="/home/project/1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriLive-Monitoring</a>-->
+<!--    <a routerLink="/home/project/2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriLive-AGH</a>-->
+<!--    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AgriWise</a>-->
+<!--    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">MCP</a>-->
+<!--    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Prolock</a>-->
+<!--    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>-->
+<!--  </div>-->
+<!--</nav>-->

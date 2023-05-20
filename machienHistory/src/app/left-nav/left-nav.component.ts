@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-left-nav',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent {
-
+  constructor(private router: Router) {
+  }
   menuOpen = false;
 
   openNav() {
@@ -15,5 +17,10 @@ export class LeftNavComponent {
 
   closeNav() {
     this.menuOpen = false;
+  }
+
+  move() {
+    this.router.navigateByUrl('/home/project/1');
+
   }
 }
