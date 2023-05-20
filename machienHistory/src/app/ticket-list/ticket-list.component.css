@@ -1,0 +1,17 @@
+button
+{
+  background-color: #F7C652;
+}
+button:hover {
+  background-color: #F7C652;
+  border-color: #F7C652;
+
+}
+
+button:active {
+  background-color: #F7C652;
+  border-color: #F7C652;
+}
+.mat-cell:hover .mat-header-cell {
+  border-color: currentColor;
+}

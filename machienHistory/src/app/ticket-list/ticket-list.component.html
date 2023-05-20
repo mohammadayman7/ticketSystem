@@ -1,0 +1,118 @@
+<!--<h2>Tickets</h2>-->
+<!--<table>-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Date</th>-->
+<!--    <th>Status</th>-->
+<!--    <th>Name</th>-->
+<!--    <th>Problem</th>-->
+<!--    <th></th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let ticket of tickets" (click)="onSelect(ticket)">-->
+<!--    <td>{{ ticket.id }}</td>-->
+<!--    <td>{{ ticket.dateTime | date }}</td>-->
+<!--    <td>{{ ticket.isOpen ? 'Open' : 'Closed' }}</td>-->
+<!--    <td>{{ ticket.uploaderName }}</td>-->
+<!--    <td>{{ ticket.problemDescription }}</td>-->
+<!--    <td><button>Edit</button></td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--  <label>-->
+<!--    <div class="ticket-description"[formGroup]="ticketForm">-->
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Description</mat-label>-->
+<!--        <textarea matInput formControlName="description" placeholder="Enter description"></textarea>-->
+<!--      </mat-form-field>-->
+<!--      <div class="ticket-description-actions">-->
+<!--        <button mat-button color="primary" (click)="onSubmit(ticketForm)">Submit</button>-->
+<!--        <button mat-button color="accent" (click)="cancelTicket()">Cancel</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </label>-->
+<!--</table>-->
+<h2>Tickets</h2>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let ticket">{{ ticket.id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="dateTime">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let ticket">{{ ticket.dateTime | date }}</td>
+  </ng-container>
+  <ng-container matColumnDef="isOpen">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let ticket">{{ ticket.isOpen ? 'Open' : 'Closed' }}</td>
+  </ng-container>
+  <ng-container matColumnDef="uploaderName">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let ticket">{{ ticket.uploaderName }}</td>
+  </ng-container>
+  <ng-container matColumnDef="problemDescription">
+    <th mat-header-cell *matHeaderCellDef>Problem</th>
+    <td mat-cell *matCellDef="let ticket">{{ ticket.problemDescription }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let ticket; columns: displayedColumns" (click)="clickedRow(ticket)"></tr>
+</table>
+
+<form class="form" [formGroup]="ticketForm" (ngSubmit)="onSubmit(ticketForm)">
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" formControlName="description" placeholder="Enter description"></textarea>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-secondary" type="button" (click)="cancelTicket()">Cancel</button>
+  </div>
+  <div *ngIf="ticketForm.controls['description'].invalid && (ticketForm.controls['description'].dirty || ticketForm.controls['description'].touched)" class="error">
+    Description is required
+  </div>
+</form>
+
+<!--<h2>Tickets</h2>-->
+<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
+<!--  <ng-container matColumnDef="id">-->
+<!--    <th mat-header-cell *matHeaderCellDef>ID</th>-->
+<!--    <td mat-cell *matCellDef="let ticket">{{ ticket.id }}</td>-->
+<!--  </ng-container>-->
+<!--  <ng-container matColumnDef="dateTime">-->
+<!--    <th mat-header-cell *matHeaderCellDef>Date</th>-->
+<!--    <td mat-cell *matCellDef="let ticket">{{ ticket.dateTime | date }}</td>-->
+<!--  </ng-container>-->
+<!--  <ng-container matColumnDef="isOpen">-->
+<!--    <th mat-header-cell *matHeaderCellDef>Status</th>-->
+<!--    <td mat-cell *matCellDef="let ticket">{{ ticket.isOpen ? 'Open' : 'Closed' }}</td>-->
+<!--  </ng-container>-->
+<!--  <ng-container matColumnDef="uploaderName">-->
+<!--    <th mat-header-cell *matHeaderCellDef>Name</th>-->
+<!--    <td mat-cell *matCellDef="let ticket">{{ ticket.uploaderName }}</td>-->
+<!--  </ng-container>-->
+<!--  <ng-container matColumnDef="problemDescription">-->
+<!--    <th mat-header-cell *matHeaderCellDef>Problem</th>-->
+<!--    <td mat-cell *matCellDef="let ticket">{{ ticket.problemDescription }}</td>-->
+<!--  </ng-container>-->
+
+
+<!--  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--  <tr mat-row-->
+<!--      (click)="clickedRow()"-->
+<!--      *matRowDef="let row; columns: displayedColumns;"></tr></table>-->
+<!--<form class="form" [formGroup]="ticketForm" (ngSubmit)="onSubmit(ticketForm)">-->
+<!--  <div class="form-group">-->
+<!--    <label for="description">Description</label>-->
+<!--    <textarea class="form-control" id="description" formControlName="description" placeholder="Enter description"></textarea>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <button class="btn btn-primary" type="submit">Submit</button>-->
+<!--    <button class="btn btn-secondary" type="button" (click)="cancelTicket()">Cancel</button>-->
+<!--  </div>-->
+<!--  <div *ngIf="ticketForm.controls['description'].invalid && (ticketForm.controls['description'].dirty || ticketForm.controls['description'].touched)" class="error">-->
+<!--    Description is required-->
+<!--  </div>-->
+<!--</form>-->
