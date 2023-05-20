@@ -1,0 +1,14 @@
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" formControlName="description"></textarea>
+  </div>
+  <div class="form-group">
+    <mat-checkbox formControlName="isOpen">Close Ticket</mat-checkbox>
+  </div>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

@@ -64,6 +64,8 @@
 /*  border-top: 1px solid #fff;*/
 /*}*/
 .top-nav {
+  overflow: hidden;
+  position: fixed;
   top: 0;
   left: 200px; /* adjust this to the width of your left nav */
   right: 0;
@@ -94,7 +96,7 @@
 }
 
 .user-options {
-  position: absolute;
+  position: fixed;
   top: 54px;
   right: 0;
   display: none;
@@ -123,7 +125,7 @@ a {
 }
 
 .user-name {
-  position: absolute;
+  position: fixed;
   height: 54px;
   cursor: pointer;
   color: #fff;
